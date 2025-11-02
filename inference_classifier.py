@@ -8,7 +8,6 @@ import numpy as np
 model_dict = pickle.load(open('./model.p', 'rb'))
 model = model_dict['model']
 
-
 cap = cv2.VideoCapture(0) #can change index acc to number of webcams, default 0 for mac, windows = 2
 
 mp_hands = mp.solutions.hands
@@ -21,8 +20,12 @@ labels_dict = {0: 'A', 1: 'B'}
 while True:
 
     data_aux = []
+    x_ = []
+    y_ = []
 
     ret, frame = cap.read()
+
+    H, W, _ = frame.shape
 
     frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
@@ -45,6 +48,16 @@ while True:
                 y = hand_landmarks.landmark[i].y
                 data_aux.append(x)
                 data_aux.append(y)
+                x_.append(x)
+                y_.append(y)
+
+        x1 = int(min(x_) * W)
+        y1 = int(min(y_) * H)
+
+        x2 = int(max(x_) * W)
+        y2 = int(max(y_) * H)
+
+
 
         #model.predict([np.asarray(data_aux)])
         # Build feature vector and match the model's expected size
@@ -61,13 +74,13 @@ while True:
         # (optional) print(pred) or draw it on the frame
 
         predicted_character = labels_dict[int(prediction[0])]
+
+
         print(predicted_character)
 
-
-
-
-
-
+        cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 0), 4)
+        cv2.putText(frame, predicted_character, (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 0, 0), 3,
+                    cv2.LINE_AA)
 
     cv2.imshow('frame', frame)
     cv2.waitKey(25) #wait 25 ms between each frame
