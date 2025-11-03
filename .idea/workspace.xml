@@ -7,7 +7,6 @@
     <list default="true" id="ee24df95-a8a3-4143-96cb-91cd475c392c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collect_imgs.py" beforeDir="false" afterPath="$PROJECT_DIR$/collect_imgs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_dataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/data.pickle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/0/0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/0/0.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/0/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data/0/1.jpg" afterDir="false" />
