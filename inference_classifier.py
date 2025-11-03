@@ -24,6 +24,7 @@ while True:
     y_ = []
 
     ret, frame = cap.read()
+    frame = cv2.flip(frame, 1)  # <-- mirror camera
 
     H, W, _ = frame.shape
 

@@ -12,7 +12,6 @@ mp.drawing_styles = mp.solutions.drawing_styles
 hands = mp_hands.Hands(static_image_mode=True, min_detection_confidence=0.3)
 
 
-
 #iterate through the photos
 
 #save in a file to later train the model
